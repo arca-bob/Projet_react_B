@@ -45,7 +45,7 @@ export default function UserDetail() {
         return prev.map((p) => (p.id === newTask.id ? newTask : p));
       }
       if (newTask.id > 0) {
-        const withoutTemp = prev.filter((p) => p.id < 0 );
+        const withoutTemp = prev.filter((p) => p.id < 0  || p.id !== newTask.id);
         return [...withoutTemp, newTask];
       }
       return [...prev, newTask];
